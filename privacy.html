@@ -1,42 +1,87 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-title-f-r="Faraday PDF, politique de confidentialité | Adamantine Labs" data-title-e-n="Faraday PDF, privacy policy | Adamantine Labs">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Faraday PDF, politique de confidentialité / Privacy policy</title>
+<title>Faraday PDF, politique de confidentialité | Adamantine Labs</title>
+<meta name="description" content="Faraday PDF ne collecte aucune donnée et n’effectue aucune requête réseau.">
+<meta name="theme-color" content="#1a1e22">
+<link rel="icon" href="img/icon-150.png" type="image/png">
 <style>
-  :root { --bg: #070b12; --panel: #0b1220; --line: #1c2e4f; --accent: #5fb3ff; --ink: #e8f0fb; --dim: #8390a3; }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 "Segoe UI", system-ui, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 40px 22px 60px; }
-  header { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
-  header svg { color: var(--accent); flex: none; }
-  h1 { font-size: 24px; margin: 0; letter-spacing: 0.03em; }
-  h1 em { color: var(--accent); font-style: normal; }
-  .by { color: var(--dim); font-size: 14px; margin: 2px 0 0; }
-  nav { margin: 0 0 28px; font-size: 14px; }
-  nav a { color: var(--accent); }
-  section { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 22px 24px; margin-bottom: 24px; }
-  h2 { font-size: 19px; margin: 0 0 6px; }
-  h3 { font-size: 15px; margin: 18px 0 4px; color: var(--accent); }
-  p, li { margin: 4px 0; }
-  ul { padding-left: 20px; margin: 4px 0; }
-  .date { color: var(--dim); font-size: 13px; margin: 0 0 10px; }
-  a { color: var(--accent); }
+:root{--a:1;--b:1;--r:3000px;--pe:auto}
+html{scroll-behavior:smooth;background:#1a1e22}
+body{margin:0;background:#1a1e22;color:#eae4da;font-family:'Segoe UI Variable Text','Segoe UI',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:#d98e57}
+a:hover{color:#e8a876}
+html[lang="fr"] [data-lang="en"],html[lang="en"] [data-lang="fr"]{display:none}
+:focus-visible{outline:2px solid #d98e57;outline-offset:3px;border-radius:4px}
+.cu{color:#d98e57}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.skip,.skip:hover{position:absolute;left:-999px;top:8px;z-index:100;background:#d98e57;color:#1a1e22;padding:8px 14px;border-radius:6px;font-weight:600;text-decoration:none}
+.skip:focus{left:8px}
+/* En-tête */
+.top{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(26,30,34,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(234,228,218,.08)}
+.top-in{max-width:1180px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;gap:24px}
+.brand,.brand:hover{display:flex;align-items:center;gap:10px;text-decoration:none;color:#eae4da;font-weight:600;letter-spacing:.12em;font-size:13px;opacity:var(--b);transition:opacity .4s}
+.brand img{width:28px;height:28px;border-radius:7px;display:block}
+.top-r{margin-left:auto;display:flex;align-items:center;gap:22px}
+.nav{display:flex;gap:26px;font-size:14px}
+.nav a{color:#a39d95;text-decoration:none}
+.nav a:hover{color:#eae4da}
+.lang{display:flex;border:1px solid rgba(234,228,218,.16);border-radius:6px;overflow:hidden}
+.lang button{background:transparent;color:#a39d95;border:0;font-family:inherit;font-weight:600;font-size:12px;padding:9px 11px;cursor:pointer}
+html[lang="fr"] .lang [data-set="fr"],html[lang="en"] .lang [data-set="en"]{background:rgba(234,228,218,.14);color:#eae4da}
+.store{display:inline-flex;align-items:center;height:36px;padding:0 14px;border-radius:6px;background:#d98e57;color:#1a1e22;font-weight:600;font-size:13px;text-decoration:none}
+.store:hover{background:#e8a876;color:#1a1e22}
+/* Pied de page */
+.foot{border-top:1px solid rgba(234,228,218,.1);padding:48px 0 56px;color:#a39d95;font-size:14px;line-height:1.7}
+.foot-in{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between;align-items:flex-start}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#eae4da;font-weight:600;letter-spacing:.12em;font-size:13px;margin-bottom:10px}
+.foot-brand img{width:24px;height:24px;border-radius:6px;display:block}
+.foot strong{color:#eae4da;font-weight:600}
+.foot a{color:#a39d95;text-decoration:none}
+.foot a:hover{color:#eae4da}
+.foot-mail{text-decoration:underline}
+.foot-links{display:flex;flex-direction:column}
+.foot-note{max-width:34em}
+html{scroll-behavior:auto}
+@media (max-width:860px){[data-hide-m]{display:none!important}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.doc{max-width:780px;margin:0 auto;padding:104px 24px 72px}
+.doc h1{font-family:'Segoe UI Variable Display','Segoe UI',system-ui,sans-serif;font-weight:600;font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-.02em;margin:0 0 8px;color:#eae4da}
+.doc .date{color:#a39d95;font-size:13px;margin:0 0 26px}
+.doc section{background:#22272d;border:1px solid #353d45;border-radius:7px;padding:22px 26px;margin:0 0 20px}
+.doc h2{font-family:'Segoe UI Variable Display','Segoe UI',system-ui,sans-serif;font-weight:600;font-size:20px;margin:0 0 8px;color:#eae4da}
+.doc h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d98e57;margin:18px 0 4px}
+.doc p,.doc li{color:#cfc8bd;line-height:1.65;margin:6px 0}
+.doc ul{padding-left:20px;margin:6px 0}
+.doc strong{color:#eae4da}
+
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M24 3 42 13.5v21L24 45 6 34.5v-21z"/><path d="M24 13 33 18.2v10.6L24 34l-9-5.2V18.2z" stroke-opacity="0.55" stroke-width="1.6"/></g></svg>
-    <div>
-      <h1>FARADAY <em>PDF</em></h1>
-      <p class="by">Adamantine Labs</p>
+<a class="skip" href="#main"><span data-lang="fr">Aller au contenu</span><span data-lang="en">Skip to content</span></a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html"><img src="img/icon-150.png" width="150" height="150" alt=""><span>FARADAY <span class="cu">PDF</span></span></a>
+    <div class="top-r">
+      <nav class="nav" data-hide-m aria-label="Navigation">
+        <a href="index.html#fonctions"><span data-lang="fr">Fonctions</span><span data-lang="en">Features</span></a>
+        <a href="index.html#appels-d-offres"><span data-lang="fr">Appels d’offres</span><span data-lang="en">Tenders</span></a>
+        <a href="index.html#pro">Pro</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Langue / Language">
+        <button type="button" data-set="fr" aria-pressed="true">FR</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="store" data-hide-m href="https://apps.microsoft.com/detail/9N6XW1245BJ0">Microsoft Store</a>
     </div>
-  </header>
-  <nav><a href="#fr">Français</a> &middot; <a href="#en">English</a></nav>
-
-  <section id="fr" lang="fr">
+  </div>
+</header>
+<main id="main" class="doc">
+<section id="fr" lang="fr" data-lang="fr">
     <h2>Politique de confidentialité</h2>
     <p class="date">En vigueur le 18 octobre 2026</p>
     <p>Faraday PDF est un utilitaire Windows qui traite vos documents entièrement sur votre appareil. Cette page décrit, simplement, ce que l'application fait et ne fait pas de vos données.</p>
@@ -65,8 +110,7 @@
     <h3>Contact</h3>
     <p>Pour toute question: <a href="mailto:support@faradaypdf.com">support@faradaypdf.com</a></p>
   </section>
-
-  <section id="en" lang="en">
+<section id="en" lang="en" data-lang="en">
     <h2>Privacy policy</h2>
     <p class="date">Effective 18 October 2026</p>
     <p>Faraday PDF is a Windows utility that processes your documents entirely on your device. This page explains, plainly, what the application does and does not do with your data.</p>
@@ -96,5 +140,35 @@
     <p>For any question: <a href="mailto:support@faradaypdf.com">support@faradaypdf.com</a></p>
   </section>
 </main>
+<footer class="foot">
+  <div class="foot-in">
+    <div>
+      <div class="foot-brand"><img src="img/icon-150.png" width="150" height="150" alt=""><span>FARADAY <span class="cu">PDF</span></span></div>
+      <strong>Adamantine Labs</strong><br>
+      <span data-lang="fr">Dubaï, Émirats arabes unis</span><span data-lang="en">Dubai, United Arab Emirates</span><br>
+      <a class="foot-mail" href="mailto:support@faradaypdf.com">support@faradaypdf.com</a>
+    </div>
+    <div class="foot-links">
+      <a href="privacy.html"><span data-lang="fr">Confidentialité</span><span data-lang="en">Privacy policy</span></a>
+      <a href="terms.html"><span data-lang="fr">Conditions et remboursement</span><span data-lang="en">Terms and refunds</span></a>
+      <a href="https://apps.microsoft.com/detail/9N6XW1245BJ0">Microsoft Store</a>
+    </div>
+    <div class="foot-note"><span data-lang="fr">© 2026 Adamantine Labs. Faraday PDF fonctionne sous Windows 10 et 11.</span><span data-lang="en">© 2026 Adamantine Labs. Faraday PDF runs on Windows 10 and 11.</span></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var d=document.documentElement, q=new URLSearchParams(location.search).get('lang');
+  var lang=(q==='en'||q==='fr')?q:((navigator.language||'fr').toLowerCase().indexOf('fr')===0?'fr':'en');
+  function set(l){
+    d.lang=l;
+    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l?'true':'false')});
+    var t=d.dataset['title'+l.toUpperCase()]; if(t) document.title=t;
+    try{var u=new URL(location.href);u.searchParams.set('lang',l);history.replaceState(null,'',u)}catch(e){}
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+  set(lang);
+})();
+</script>
 </body>
 </html>
