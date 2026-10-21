@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Faraday PDF, politique de confidentialité | Adamantine Labs</title>
-<meta name="description" content="Faraday PDF ne collecte aucune donnée et n’effectue aucune requête réseau.">
+<meta name="description" content="Faraday PDF ne collecte aucune donnée personnelle et reste hors ligne par défaut.">
 <meta name="theme-color" content="#1a1e22">
 <link rel="icon" href="img/icon-150.png" type="image/png">
 <style>
@@ -68,7 +68,7 @@ html{scroll-behavior:auto}
     <div class="top-r">
       <nav class="nav" data-hide-m aria-label="Navigation">
         <a href="index.html#fonctions"><span data-lang="fr">Fonctions</span><span data-lang="en">Features</span></a>
-        <a href="index.html#appels-d-offres"><span data-lang="fr">Appels d’offres</span><span data-lang="en">Tenders</span></a>
+        <a href="index.html#usages"><span data-lang="fr">Usages</span><span data-lang="en">Use cases</span></a>
         <a href="index.html#pro">Pro</a>
         <a href="index.html#faq">FAQ</a>
       </nav>
@@ -83,7 +83,7 @@ html{scroll-behavior:auto}
 <main id="main" class="doc">
 <section id="fr" lang="fr" data-lang="fr">
     <h2>Politique de confidentialité</h2>
-    <p class="date">En vigueur le 18 octobre 2026</p>
+    <p class="date">En vigueur le 20 octobre 2026</p>
     <p>Faraday PDF est un utilitaire Windows qui traite vos documents entièrement sur votre appareil. Cette page décrit, simplement, ce que l'application fait et ne fait pas de vos données.</p>
 
     <h3>Aucune donnée personnelle collectée</h3>
@@ -92,8 +92,8 @@ html{scroll-behavior:auto}
     <h3>Vos documents restent sur votre appareil</h3>
     <p>Les PDF et les images que vous ouvrez sont lus et traités dans la mémoire de votre ordinateur. Ils ne sont jamais envoyés sur Internet. Les fichiers produits sont enregistrés uniquement à l'endroit que vous choisissez.</p>
 
-    <h3>Aucune connexion réseau</h3>
-    <p>L'application n'effectue aucune requête réseau: pas de télémétrie, pas de statistiques d'utilisation, pas de rapports d'erreur envoyés, pas de publicité. Vous pouvez le vérifier en l'utilisant avec le réseau coupé ou un pare-feu actif: elle fonctionne à l'identique.</p>
+    <h3>Hors ligne par défaut</h3>
+    <p>L'application n'effectue aucune requête réseau de sa propre initiative: pas de télémétrie, pas de statistiques d'utilisation, pas de rapports d'erreur envoyés, pas de publicité, aucune vérification automatique. Une seule exception existe, que vous déclenchez vous-même: l'activation d'une clé de licence Pro, décrite plus bas. Vous pouvez le vérifier en l'utilisant avec le réseau coupé ou un pare-feu actif: tout fonctionne à l'identique.</p>
 
     <h3>Réglages enregistrés localement</h3>
     <p>Quelques préférences (thème choisi, langue, affichage des astuces) sont mémorisées dans le stockage local de l'application, sur votre appareil uniquement. Elles ne contiennent aucune information sur vos documents et disparaissent quand vous désinstallez l'application.</p>
@@ -102,7 +102,12 @@ html{scroll-behavior:auto}
     <p>Le téléchargement, l'installation et les mises à jour de l'application sont assurés par le Microsoft Store, selon les règles de confidentialité de Microsoft. Adamantine Labs ne reçoit de Microsoft que des statistiques agrégées et anonymes (par exemple, un nombre de téléchargements).</p>
 
     <h3>Achat de Faraday PDF Pro</h3>
-    <p>Faraday PDF Pro (déblocage de fonctions supplémentaires, achat unique) s'achète dans la fenêtre du Microsoft Store, qui s'ouvre uniquement quand vous cliquez sur le bouton d'achat. Le paiement, la facture et un éventuel remboursement sont gérés par Microsoft, avec votre compte Microsoft et selon ses règles de confidentialité. Adamantine Labs ne reçoit aucune donnée de paiement de l'acheteur: Microsoft ne lui communique que des statistiques et des relevés de ventes. La licence est ensuite vérifiée par Windows, hors ligne: Faraday PDF lui-même n'effectue aucune requête réseau pour cela.</p>
+    <p>Faraday PDF Pro (déblocage de fonctions supplémentaires, achat unique) s'achète sur Gumroad, plateforme de vente qui agit comme vendeur officiel. Le bouton d'achat de l'application ouvre la page de vente dans votre navigateur: c'est votre navigateur qui se connecte, pas Faraday PDF. Le paiement, la facture, les taxes et un éventuel remboursement sont gérés par Gumroad, selon ses propres règles de confidentialité. Adamantine Labs ne reçoit aucun numéro de carte: Gumroad lui communique les informations de vente nécessaires, notamment l'adresse e-mail de l'achat, utilisée uniquement pour répondre à vos demandes d'assistance et de remboursement.</p>
+
+    <h3>Activation de la clé de licence</h3>
+    <p>Après l'achat, vous recevez une clé de licence par e-mail. Pour l'activer ou la vérifier, vous cliquez sur « Ouvrir la connexion » dans la fenêtre Pro: l'application ouvre alors une connexion de 2 minutes au plus, signalée en haut de la fenêtre par un bandeau « EN LIGNE » avec un compte à rebours et un bouton pour revenir hors ligne. Elle se referme seule après l'activation ou à l'échéance.</p>
+    <p>Pendant ce temps, l'application envoie votre clé de licence, et rien d'autre, au serveur de licence de Gumroad (api.gumroad.com). Celui-ci répond si la clé est valide, remboursée, désactivée ou déjà utilisée sur deux appareils. Aucun document, aucun nom et aucune information sur votre ordinateur ne sont envoyés. Comme pour toute connexion à un serveur, Gumroad voit l'adresse IP d'où elle provient, selon ses propres règles de confidentialité.</p>
+    <p>Votre clé est ensuite enregistrée dans un petit fichier sur votre appareil, avec son état et deux dates; ni votre adresse e-mail ni votre nom n'y figurent. Hors de ces connexions que vous ouvrez vous-même, aucune vérification n'a lieu: une licence remboursée ou désactivée cesse donc de fonctionner à la prochaine vérification que vous lancez.</p>
 
     <h3>Évolutions</h3>
     <p>Si une future fonction de l'application devait un jour nécessiter une connexion, elle serait facultative, déclenchée par vous uniquement, et décrite ici avant sa mise à disposition.</p>
@@ -112,7 +117,7 @@ html{scroll-behavior:auto}
   </section>
 <section id="en" lang="en" data-lang="en">
     <h2>Privacy policy</h2>
-    <p class="date">Effective 18 October 2026</p>
+    <p class="date">Effective 20 October 2026</p>
     <p>Faraday PDF is a Windows utility that processes your documents entirely on your device. This page explains, plainly, what the application does and does not do with your data.</p>
 
     <h3>No personal data collected</h3>
@@ -121,8 +126,8 @@ html{scroll-behavior:auto}
     <h3>Your documents stay on your device</h3>
     <p>The PDFs and images you open are read and processed in your computer's memory. They are never sent over the Internet. The files you produce are saved only where you choose.</p>
 
-    <h3>No network connection</h3>
-    <p>The application makes no network requests: no telemetry, no usage statistics, no error reports sent, no advertising. You can check it by using it with the network off or behind a firewall: it works exactly the same.</p>
+    <h3>Offline by default</h3>
+    <p>The application makes no network request of its own accord: no telemetry, no usage statistics, no error reports sent, no advertising, no automatic check. One exception exists, which you trigger yourself: activating a Pro licence key, described below. You can check it by using the application with the network off or behind a firewall: everything works exactly the same.</p>
 
     <h3>Settings stored locally</h3>
     <p>A few preferences (chosen theme, language, display of tips) are kept in the application's local storage, on your device only. They contain no information about your documents and are removed when you uninstall the application.</p>
@@ -131,7 +136,12 @@ html{scroll-behavior:auto}
     <p>Downloading, installing and updating the application are handled by the Microsoft Store, under Microsoft's privacy rules. Adamantine Labs only receives aggregated, anonymous statistics from Microsoft (for example, a number of downloads).</p>
 
     <h3>Buying Faraday PDF Pro</h3>
-    <p>Faraday PDF Pro (extra features unlocked by a one-time purchase) is bought in the Microsoft Store's own window, which opens only when you click the buy button. Payment, invoice and any refund are handled by Microsoft, with your Microsoft account and under its privacy rules. Adamantine Labs receives no payment data from the buyer: Microsoft only provides it with sales statistics and statements. The licence is then checked by Windows, offline: Faraday PDF itself makes no network request for this.</p>
+    <p>Faraday PDF Pro (extra features unlocked by a one-time purchase) is bought on Gumroad, a sales platform acting as merchant of record. The buy button of the application opens the sales page in your browser: it is your browser that connects, not Faraday PDF. Payment, invoice, taxes and any refund are handled by Gumroad, under its own privacy rules. Adamantine Labs receives no card number: Gumroad gives it the sales information it needs, notably the e-mail address of the purchase, used only to answer your support and refund requests.</p>
+
+    <h3>Activating the licence key</h3>
+    <p>After the purchase you receive a licence key by e-mail. To activate or check it, you click "Open the connection" in the Pro window: the application then opens a connection of 2 minutes at most, shown at the top of the window by an "ONLINE" banner with a countdown and a button to go back offline. It closes by itself after the activation or at the deadline.</p>
+    <p>During that time, the application sends your licence key, and nothing else, to Gumroad's licence server (api.gumroad.com). It answers whether the key is valid, refunded, disabled or already used on two devices. No document, no name and no information about your computer is sent. As with any connection to a server, Gumroad sees the IP address it comes from, under its own privacy rules.</p>
+    <p>Your key is then saved in a small file on your device, with its state and two dates; neither your e-mail address nor your name is in it. Outside these connections that you open yourself, no check takes place: a refunded or disabled licence therefore stops working at the next check you start.</p>
 
     <h3>Changes</h3>
     <p>Should a future feature of the application ever need a connection, it would be optional, started only by you, and described here before being made available.</p>

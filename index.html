@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Faraday PDF, utilitaire PDF 100 % hors ligne pour Windows | Adamantine Labs</title>
-<meta name="description" content="Réorganisez, fusionnez, compressez et nettoyez vos PDF sur votre PC. Aucun fichier ne quitte votre appareil: l’application n’effectue aucune requête réseau.">
+<meta name="description" content="Réorganisez, fusionnez, compressez et nettoyez vos PDF sur votre PC. Aucun fichier ne quitte votre appareil: l’application est hors ligne par défaut.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Faraday PDF">
 <meta property="og:title" content="Faraday PDF, utilitaire PDF 100 % hors ligne pour Windows">
-<meta property="og:description" content="Réorganisez, fusionnez, compressez et nettoyez vos PDF sur votre PC. Aucun fichier ne quitte votre appareil: l’application n’effectue aucune requête réseau.">
+<meta property="og:description" content="Réorganisez, fusionnez, compressez et nettoyez vos PDF sur votre PC. Aucun fichier ne quitte votre appareil: l’application est hors ligne par défaut.">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="en_US">
 <!-- OG: adapter le domaine si le site n'est pas servi depuis faradaypdf.com -->
@@ -97,12 +97,21 @@ html.intro .hero{height:260vh}
 .head h1{font-family:'Segoe UI Variable Display','Segoe UI',system-ui,sans-serif;font-weight:600;font-size:clamp(26px,min(3.8vw,5vh),52px);line-height:1.04;letter-spacing:-.025em;margin:0;color:#eae4da;text-wrap:balance;max-width:22em}
 .deck{position:absolute;left:50%;top:57%;width:0;height:0}
 .hc{position:absolute;left:0;top:0;width:min(28vw,440px)}
-.hc1{z-index:1;transform:translate(calc(-50% + var(--a)*-31vw),calc(-50% + (1 - var(--a))*75vh)) rotate(calc((1 - var(--a))*-7deg))}
+.hc1{z-index:1;transform:translate(calc(-50% + var(--a)*var(--hx1,-31vw)),calc(-50% + (1 - var(--a))*75vh)) rotate(calc((1 - var(--a))*-7deg))}
 .hc2{z-index:3;transform:translate(-50%,calc(-50% + (1 - var(--a))*75vh))}
-.hc3{z-index:2;transform:translate(calc(-50% + var(--a)*31vw),calc(-50% + (1 - var(--a))*75vh)) rotate(calc((1 - var(--a))*7deg))}
+.hc3{z-index:2;transform:translate(calc(-50% + var(--a)*var(--hx3,31vw)),calc(-50% + (1 - var(--a))*75vh)) rotate(calc((1 - var(--a))*7deg))}
 .hc-shot{position:relative;aspect-ratio:1917/1009;border-radius:8px;border:1px solid rgba(234,228,218,.14);border-top-color:rgba(217,142,87,.7);background:#22272d;box-shadow:inset 0 1px 0 rgba(234,228,218,.1),0 -18px 60px -24px rgba(217,142,87,.55),0 40px 80px -30px rgba(0,0,0,.8);overflow:hidden}
 .hc-cap{margin-top:12px;display:flex;gap:10px;align-items:baseline;font-size:clamp(12px,2.2vh,14px);line-height:1.45;color:#eae4da;background:rgba(26,30,34,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(234,228,218,.12);border-radius:8px;padding:10px 14px;opacity:var(--b)}
 .hc-n{color:#d98e57;font-size:11px;letter-spacing:.1em;flex:none}
+.hc-cap>span:last-child{min-width:0;overflow-wrap:anywhere}
+/* Petits écrans: trois cartes côte à côte de 30 % de la largeur. La légende passe sous son numéro, la taille du texte suit la largeur de l'écran et les mots longs se coupent au lieu de déborder (iPhone 13 Pro, 390 px, et plus étroit). */
+@media (max-width:760px){
+  .deck{--hx1:-32vw;--hx3:32vw}
+  .hc{width:30vw}
+  .hc-cap{flex-direction:column;gap:3px;align-items:flex-start;padding:8px 7px;font-size:clamp(10px,2.75vw,13px);line-height:1.35}
+  .hc-cap>span:last-child{hyphens:auto;-webkit-hyphens:auto}
+  .hc-n{font-size:10px}
+}
 .ctas{position:absolute;left:0;right:0;bottom:5vh;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:0 24px;opacity:var(--b);pointer-events:var(--pe)}
 .btn{display:inline-flex;align-items:center;height:clamp(40px,8vh,46px);padding:0 22px;border-radius:6px;background:#d98e57;color:#1a1e22;font-weight:600;font-size:15px;text-decoration:none;box-shadow:0 10px 30px -10px rgba(217,142,87,.5)}
 .btn:hover{background:#e8a876;color:#1a1e22}
@@ -144,11 +153,14 @@ html:not(.js) .track{display:none}
 .layer{position:absolute;inset:0;opacity:0;transition:opacity .7s ease}
 .layer.on{opacity:1}
 
-/* Appels d'offres */
-#appels-d-offres{padding:clamp(60px,8vw,110px) 0;scroll-margin-top:72px}
-.tender{background:#22272d;border:1px solid rgba(234,228,218,.1);border-radius:12px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(28px,5vw,72px);align-items:start}
-.tender .h2{font-size:clamp(28px,3.4vw,42px);line-height:1.1;margin:0 0 18px}
-.tender p.lead{font-size:17px;max-width:34em}
+/* Usages: confidentialité et travail de volume */
+#usages{padding:clamp(60px,8vw,110px) 0;scroll-margin-top:72px}
+.use-head{max-width:720px;margin-bottom:clamp(28px,4vw,48px)}
+.use-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(16px,2.4vw,28px);align-items:start}
+.use{background:#22272d;border:1px solid rgba(234,228,218,.1);border-radius:12px;padding:clamp(24px,4vw,48px)}
+.use .h2{font-size:clamp(24px,2.8vw,34px);line-height:1.12;margin:0 0 16px}
+.use p.lead{font-size:16px;max-width:34em}
+.use .steps{margin-top:24px}
 .steps{display:flex;flex-direction:column;border-bottom:1px solid rgba(234,228,218,.1)}
 .step{display:grid;grid-template-columns:40px 1fr;gap:16px;padding:18px 0;border-top:1px solid rgba(234,228,218,.1);font-size:16px;line-height:1.55}
 .step-n{color:#d98e57;font-size:12px;letter-spacing:.1em;padding-top:5px}
@@ -219,7 +231,7 @@ html:not(.js) .ans{display:block}
     <div class="top-r">
       <nav class="nav" data-hide-m aria-label="Navigation">
         <a href="#fonctions"><span data-lang="fr">Fonctions</span><span data-lang="en">Features</span></a>
-        <a href="#appels-d-offres"><span data-lang="fr">Appels d’offres</span><span data-lang="en">Tenders</span></a>
+        <a href="#usages"><span data-lang="fr">Usages</span><span data-lang="en">Use cases</span></a>
         <a href="#pro">Pro</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -278,7 +290,7 @@ html:not(.js) .ans{display:block}
     <div>
       <div class="kicker"><span data-lang="fr">100 % hors ligne</span><span data-lang="en">100 % offline</span></div>
       <h2 class="h2"><span data-lang="fr">Coupez Internet. Rien ne change.</span><span data-lang="en">Switch the Internet off. Nothing changes.</span></h2>
-      <p class="lead"><span data-lang="fr">L’application n’effectue aucune requête réseau et ne demande aucun compte. Vos contrats, devis et dossiers confidentiels restent sur votre poste, même pour une compression ou un nettoyage.</span><span data-lang="en">The app makes no network request and asks for no account. Your contracts, quotes and confidential files stay on your computer, even for compression or cleaning.</span></p>
+      <p class="lead"><span data-lang="fr">L’application est hors ligne par défaut et ne demande aucun compte. Une seule exception: l’activation de la clé de Pro, une connexion de quelques secondes que vous ouvrez et refermez vous-même, sans aucun document. Vos contrats, devis et dossiers confidentiels restent sur votre poste, même pour une compression ou un nettoyage.</span><span data-lang="en">The app is offline by default and asks for no account. One exception only: activating the Pro key, a connection of a few seconds that you open and close yourself, with no document sent. Your contracts, quotes and confidential files stay on your computer, even for compression or cleaning.</span></p>
       <p class="note"><span data-lang="fr">Vérifiez-le vous-même: coupez la connexion, ou regardez votre pare-feu.</span><span data-lang="en">Check it yourself: cut the connection, or watch your firewall.</span></p>
     </div>
     <div class="rows">
@@ -335,20 +347,34 @@ html:not(.js) .ans{display:block}
   </div>
 </section>
 
-<section id="appels-d-offres">
+<section id="usages">
+  <a id="appels-d-offres" aria-hidden="true"></a>
   <div class="wrap">
-    <div class="tender">
-      <div>
-        <div class="kicker"><span data-lang="fr">Appels d’offres</span><span data-lang="en">Tenders</span></div>
-        <h2 class="h2"><span data-lang="fr">Pensé pour les gros dossiers et les réponses aux appels d’offres</span><span data-lang="en">Built for large files and tender responses</span></h2>
-        <p class="lead"><span data-lang="fr">Un dossier de réponse, ce sont des dizaines de pièces à assembler, ordonner et numéroter, souvent confidentielles. Faraday PDF a été éprouvé sur un vrai dossier de ce type.</span><span data-lang="en">A tender response means dozens of documents to assemble, order and number, many of them confidential. Faraday PDF was proven on a real file of this kind.</span></p>
-      </div>
-      <div class="steps">
-        <div class="step"><span class="step-n">01</span><p><strong><span data-lang="fr">Fusionnez les pièces,</span><span data-lang="en">Merge the documents,</span></strong> <span data-lang="fr">puis remettez-les dans l’ordre en déplaçant des dizaines de pages d’un seul geste.</span><span data-lang="en">then put them in order by moving dozens of pages in a single gesture.</span></p></div>
-        <div class="step"><span class="step-n">02</span><p><strong><span data-lang="fr">Compressez le dossier final</span><span data-lang="en">Compress the final file</span></strong> <span data-lang="fr">avant le dépôt.</span><span data-lang="en">before submitting it.</span></p></div>
-        <div class="step"><span class="step-n">03</span><p><strong><span data-lang="fr">Avec Pro,</span><span data-lang="en">With Pro,</span></strong> <span data-lang="fr">numérotez et paraphez chaque page, ajoutez un filigrane ou un tampon.</span><span data-lang="en">number and initial every page, add a watermark or a stamp.</span></p></div>
-        <div class="step"><span class="step-n">04</span><p><strong><span data-lang="fr">Rien ne sort.</span><span data-lang="en">Nothing leaves.</span></strong> <span data-lang="fr">Aucun document ne quitte votre poste.</span><span data-lang="en">No document leaves your computer.</span></p></div>
-      </div>
+    <div class="use-head">
+      <div class="kicker"><span data-lang="fr">Usages</span><span data-lang="en">Use cases</span></div>
+      <h2 class="h2"><span data-lang="fr">Pour les documents qui comptent.</span><span data-lang="en">For the documents that matter.</span></h2>
+    </div>
+    <div class="use-grid">
+      <article class="use">
+        <div class="kicker"><span data-lang="fr">Confidentialité</span><span data-lang="en">Confidentiality</span></div>
+        <h3 class="h2"><span data-lang="fr">Vos documents sensibles restent chez vous.</span><span data-lang="en">Your sensitive documents stay with you.</span></h3>
+        <p class="lead"><span data-lang="fr">Contrats, devis, dossiers juridiques, RH ou médicaux: tout est lu, réordonné, compressé et nettoyé sur votre poste, jamais envoyé sur un service en ligne.</span><span data-lang="en">Contracts, quotes, legal, HR or medical files: everything is read, reordered, compressed and cleaned on your computer, never sent to an online service.</span></p>
+        <div class="steps">
+          <div class="step"><span class="step-n">01</span><p><strong><span data-lang="fr">Rien ne sort.</span><span data-lang="en">Nothing leaves.</span></strong> <span data-lang="fr">Aucun document ne quitte votre poste, même pour compresser ou nettoyer.</span><span data-lang="en">No document leaves your computer, even to compress or clean.</span></p></div>
+          <div class="step"><span class="step-n">02</span><p><strong><span data-lang="fr">Effacez les données cachées</span><span data-lang="en">Strip the hidden data</span></strong> <span data-lang="fr">(auteur, historique, métadonnées) avant d’envoyer un fichier à un tiers.</span><span data-lang="en">(author, history, metadata) before sending a file to a third party.</span></p></div>
+          <div class="step"><span class="step-n">03</span><p><strong><span data-lang="fr">Sans compte ni télémétrie.</span><span data-lang="en">No account, no telemetry.</span></strong> <span data-lang="fr">La seule connexion possible est l’activation de la clé Pro, que vous ouvrez vous-même.</span><span data-lang="en">The only possible connection is the Pro key activation, which you open yourself.</span></p></div>
+        </div>
+      </article>
+      <article class="use">
+        <div class="kicker"><span data-lang="fr">Travail de volume</span><span data-lang="en">Large-scale work</span></div>
+        <h3 class="h2"><span data-lang="fr">Les gros dossiers, sans attendre un envoi.</span><span data-lang="en">Large files, without waiting for an upload.</span></h3>
+        <p class="lead"><span data-lang="fr">Réponses à un appel d’offres, dossiers de contentieux, rapports, archives: des dizaines de pièces à assembler, ordonner et numéroter. Faraday PDF a été éprouvé sur un vrai dossier d’appel d’offres.</span><span data-lang="en">Tender responses, litigation files, reports, archives: dozens of documents to assemble, order and number. Faraday PDF was proven on a real tender file.</span></p>
+        <div class="steps">
+          <div class="step"><span class="step-n">01</span><p><strong><span data-lang="fr">Fusionnez les pièces,</span><span data-lang="en">Merge the documents,</span></strong> <span data-lang="fr">puis remettez-les dans l’ordre en déplaçant des dizaines de pages d’un seul geste.</span><span data-lang="en">then put them in order by moving dozens of pages in a single gesture.</span></p></div>
+          <div class="step"><span class="step-n">02</span><p><strong><span data-lang="fr">Compressez le dossier final</span><span data-lang="en">Compress the final file</span></strong> <span data-lang="fr">avant le dépôt ou l’envoi.</span><span data-lang="en">before submitting or sending it.</span></p></div>
+          <div class="step"><span class="step-n">03</span><p><strong><span data-lang="fr">Avec Pro,</span><span data-lang="en">With Pro,</span></strong> <span data-lang="fr">numérotez et paraphez chaque page, ajoutez un filigrane ou un tampon.</span><span data-lang="en">number and initial every page, add a watermark or a stamp.</span></p></div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -378,7 +404,8 @@ html:not(.js) .ans{display:block}
           <ul>
             <li><span class="dia" aria-hidden="true"></span><span><span data-lang="fr">Licence à vie, sans date d’expiration</span><span data-lang="en">Lifetime licence, no expiry date</span></span></li>
             <li><span class="dia" aria-hidden="true"></span><span><span data-lang="fr">Jusqu’à 2 appareils</span><span data-lang="en">Up to 2 devices</span></span></li>
-            <li><span class="dia" aria-hidden="true"></span><span><span data-lang="fr">Remboursable pendant 30 jours</span><span data-lang="en">Refundable for 30 days</span></span></li>
+            <li><span class="dia" aria-hidden="true"></span><span><span data-lang="fr">Remboursable pendant 14 jours</span><span data-lang="en">Refundable for 14 days</span></span></li>
+            <li><span class="dia" aria-hidden="true"></span><span><span data-lang="fr">Clé de licence par e-mail, activée en quelques secondes</span><span data-lang="en">Licence key by e-mail, activated in a few seconds</span></span></li>
           </ul>
           <a class="terms" href="terms.html"><span data-lang="fr">Conditions et remboursement</span><span data-lang="en">Terms and refunds</span></a>
           <p class="fine"><span data-lang="fr">Prix de lancement, taxes comprises là où la loi l’exige.</span><span data-lang="en">Launch price, taxes included where the law requires it.</span></p>
@@ -398,7 +425,7 @@ html:not(.js) .ans{display:block}
     <div class="faq-list">
       <div class="qa open">
         <button type="button" aria-expanded="true"><span><span data-lang="fr">Faraday PDF est-il vraiment hors ligne ?</span><span data-lang="en">Is Faraday PDF really offline?</span></span><span class="plus" aria-hidden="true">+</span></button>
-        <div class="ans"><span data-lang="fr">Oui. L’application n’effectue aucune requête réseau. Vous pouvez le vérifier en coupant votre connexion, ou avec votre pare-feu. L’achat éventuel de Pro se fait dans la fenêtre du Microsoft Store, pas dans l’application.</span><span data-lang="en">Yes. The app makes no network request. You can check by switching your connection off, or with your firewall. Buying Pro, if you do, happens in the Microsoft Store’s own window, not inside the app.</span></div>
+        <div class="ans"><span data-lang="fr">Oui, pour tout ce que vous faites de vos documents. L’application est hors ligne par défaut, sans télémétrie ni compte. Une seule exception: l’activation de la clé de Pro, une connexion de quelques secondes que vous ouvrez vous-même (un bandeau « EN LIGNE » l’indique) et qui se referme seule; aucun document n’est envoyé. L’achat de Pro se fait sur une page Gumroad ouverte dans votre navigateur, pas dans l’application. Vous pouvez tout vérifier avec votre pare-feu.</span><span data-lang="en">Yes, for everything you do with your documents. The app is offline by default, with no telemetry and no account. One exception only: activating the Pro key, a connection of a few seconds that you open yourself (an “ONLINE” banner shows it) and that closes by itself; no document is sent. Buying Pro happens on a Gumroad page opened in your browser, not inside the app. You can check everything with your firewall.</span></div>
       </div>
       <div class="qa">
         <button type="button" aria-expanded="false"><span><span data-lang="fr">Quelles versions de Windows ?</span><span data-lang="en">Which Windows versions?</span></span><span class="plus" aria-hidden="true">+</span></button>
@@ -414,7 +441,11 @@ html:not(.js) .ans{display:block}
       </div>
       <div class="qa">
         <button type="button" aria-expanded="false"><span><span data-lang="fr">Puis-je me faire rembourser ?</span><span data-lang="en">Can I get a refund?</span></span><span class="plus" aria-hidden="true">+</span></button>
-        <div class="ans"><span data-lang="fr">Oui, pendant 30 jours après l’achat, sans avoir à vous justifier. Détails dans les <a href="terms.html#remboursement">conditions</a>.</span><span data-lang="en">Yes, within 30 days of purchase, with no need to justify it. Details in the <a href="terms.html#remboursement">terms</a>.</span></div>
+        <div class="ans"><span data-lang="fr">Oui, pendant 14 jours après l’achat, sans avoir à vous justifier. Détails dans les <a href="terms.html#remboursement">conditions</a>.</span><span data-lang="en">Yes, within 14 days of purchase, with no need to justify it. Details in the <a href="terms.html#remboursement">terms</a>.</span></div>
+      </div>
+      <div class="qa">
+        <button type="button" aria-expanded="false"><span><span data-lang="fr">Comment active-t-on Pro ?</span><span data-lang="en">How is Pro activated?</span></span><span class="plus" aria-hidden="true">+</span></button>
+        <div class="ans"><span data-lang="fr">Après l’achat, vous recevez une clé de licence par e-mail. Dans Faraday PDF, ouvrez la fenêtre Pro, choisissez « J’ai une clé », collez-la, puis ouvrez la connexion: l’application la vérifie en quelques secondes et redevient hors ligne. Une clé couvre 2 appareils; si vous changez d’ordinateur, écrivez-nous pour libérer une place.</span><span data-lang="en">After purchase you receive a licence key by e-mail. In Faraday PDF, open the Pro window, choose “I have a key”, paste it, then open the connection: the app checks it within seconds and goes offline again. A key covers 2 devices; if you change computer, write to us to free a seat.</span></div>
       </div>
       <div class="qa">
         <button type="button" aria-expanded="false"><span><span data-lang="fr">Où vont mes fichiers ?</span><span data-lang="en">Where do my files go?</span></span><span class="plus" aria-hidden="true">+</span></button>
