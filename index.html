@@ -115,6 +115,9 @@ html.intro .hero{height:260vh}
 .ctas{position:absolute;left:0;right:0;bottom:5vh;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:0 24px;opacity:var(--b);pointer-events:var(--pe)}
 .btn{display:inline-flex;align-items:center;height:clamp(40px,8vh,46px);padding:0 22px;border-radius:6px;background:#d98e57;color:#1a1e22;font-weight:600;font-size:15px;text-decoration:none;box-shadow:0 10px 30px -10px rgba(217,142,87,.5)}
 .btn:hover{background:#e8a876;color:#1a1e22}
+.price .btn.buy{display:flex;justify-content:center;width:100%;margin-top:22px;box-sizing:border-box}
+.price .how{margin:12px 0 4px;font-size:13px;line-height:1.5;color:#b9b2a6}
+.price .how+.terms{margin-top:16px}
 .btn-g{display:inline-flex;align-items:center;height:clamp(40px,8vh,46px);padding:0 22px;border-radius:6px;border:1px solid rgba(234,228,218,.18);background:rgba(26,30,34,.45);color:#eae4da;font-weight:600;font-size:15px;text-decoration:none;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .btn-g:hover{border-color:#d98e57;color:#eae4da}
 .fill{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
@@ -397,8 +400,7 @@ html:not(.js) .ans{display:block}
           </ul>
         </div>
         <div class="price">
-          <!-- STATUT PRO: remplacer ce bandeau par un bouton d'achat quand la vente est ouverte -->
-          <span class="soon"><span data-lang="fr">Bientôt disponible</span><span data-lang="en">Coming soon</span></span>
+          <!-- STATUT PRO: vente ouverte le 27 octobre 2026 (achat sur Gumroad, activation par clé dans l'application du Store) -->
           <div class="amount">19,99 €</div>
           <div class="once"><span data-lang="fr">achat unique, sans abonnement</span><span data-lang="en">one-time purchase, no subscription</span></div>
           <ul>
@@ -407,6 +409,8 @@ html:not(.js) .ans{display:block}
             <li><span class="dia" aria-hidden="true"></span><span><span data-lang="fr">Remboursable pendant 14 jours</span><span data-lang="en">Refundable for 14 days</span></span></li>
             <li><span class="dia" aria-hidden="true"></span><span><span data-lang="fr">Clé de licence par e-mail, activée en quelques secondes</span><span data-lang="en">Licence key by e-mail, activated in a few seconds</span></span></li>
           </ul>
+          <a class="btn buy" href="https://adamantinelabs.gumroad.com/l/faraday-pdf-pro" rel="noopener"><span data-lang="fr">Acheter Pro</span><span data-lang="en">Buy Pro</span></a>
+          <p class="how"><span data-lang="fr">Installez d’abord Faraday PDF depuis le Microsoft Store (gratuit), puis entrez votre clé dans l’application.</span><span data-lang="en">First install Faraday PDF from the Microsoft Store (free), then enter your key in the app.</span></p>
           <a class="terms" href="terms.html"><span data-lang="fr">Conditions et remboursement</span><span data-lang="en">Terms and refunds</span></a>
           <p class="fine"><span data-lang="fr">Prix de lancement, taxes comprises là où la loi l’exige.</span><span data-lang="en">Launch price, taxes included where the law requires it.</span></p>
         </div>
